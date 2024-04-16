@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class appointments extends Model
 {
+  
     use HasFactory;
 }
