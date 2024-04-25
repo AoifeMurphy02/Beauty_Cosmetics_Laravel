@@ -22,8 +22,9 @@ class PagesController extends Controller
         return view('gallery');
     }
     public function staff(){
-        
-        return view('staff');
+        $staff = staff::all();
+        return view('staff', ['staff' => $staff]);
+       // return view('staff');
     }
 }
 
