@@ -11,7 +11,17 @@
 </head>
 <body>
     <header>
-        <p>header!</p>
+        <p>Nails and Beauty!</p>
+     
+            <nav>
+                <a  href="/">Home</a>
+                <a  href="/appointments" >Appointments</a>
+                <a href="/staff" >Staff</a>
+                <a  href="/aboutUs" >About Us</a>
+                <a href="/gallery" >Gallery</a>
+
+             
+        </nav>
     </header>
     <div>
         @yield('content')

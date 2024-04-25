@@ -10,5 +10,20 @@ class PagesController extends Controller
     {
         return view('index');
     }
+    public function appointments(){
+        return view('appointments');
+    }
+    public function aboutUs(){
+
+        return view('aboutUs');
+    }
+    public function gallery(){
+        
+        return view('gallery');
+    }
+    public function staff(){
+        
+        return view('staff');
+    }
 }
 
