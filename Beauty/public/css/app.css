@@ -1,62 +1,54 @@
-header {
-  background-color: #f166bc;
+@font-face 
+{
+  font-family: 'Beth Ellen';
+
+  src: url(/fonts/BethEllen-Regular.ttf?ffa906155b8b3ef85c3d01be72d4b612) format('truetype');
+
+  font-weight: 400;
+
+  font-style: normal;
+}
+
+.beth-ellen-regular
+   {
+  font-family: 'Beth Ellen', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header 
+{
+  background-color: black;
   padding: 10px 20px;
   border-bottom: 1px solid #dee2e6;
   text-align: center;
   font-size: 24px;
 }
-footer{
-  background-color: #f166bc;
-  color: #fff;
-  font-size: 14px;
-  text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
-}
-.gallery img {
-  width: 100%;
-  height: 300px;
-}
-.staff_table{
-    width: 80%;
-    margin: 20px auto;  
-    text-align: left;
+
+nav 
+{
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  justify-content: flex-end
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
-
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #f166bc;
-}
-
-
-input[type="text"],
-input[type="email"] {
-  width: 50%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box; 
-}
-
-
-.btn-primary {
-  background-color: #f166bc;
+nav a 
+    {
   color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  display: inline-block;
+  text-decoration: none;
+  padding: 0 15px;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer 
+    {
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

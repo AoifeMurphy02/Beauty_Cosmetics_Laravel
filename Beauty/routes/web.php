@@ -15,6 +15,9 @@ Route::get('/aboutUs', [PagesController::class, 'aboutUs']);
 Route::get('/gallery', [PagesController::class, 'gallery']);
 
 Route::get('/services', [ServicesController::class, 'index']);
+Route::get('/services', [ServicesController::class, 'index'])->name('services');
+Route::get('/services/create', [ServicesController::class, 'create'])->name('services.create');
+Route::post('/services', [ServicesController::class, 'store'])->name('services.store');
 
 
 Route::get('/staff', [StaffController::class, 'index']);

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <link rel="icon" type="image/ico" href="{{ asset('images/favicon.ico') }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -11,18 +12,17 @@
 </head>
 <body>
     <header>
-        <p>Nails and Beauty!</p>
-     
-            <nav>
-                <a  href="/">Home</a>
-                <a  href="/services" >Services</a>
-                <a  href="/appointments" >Appointments</a>
-                <a href="/staff" >Staff</a>
-                <a  href="/aboutUs" >About Us</a>
-                <a href="/gallery" >Gallery</a>
-
-             
-        </nav>
+        <a class="headerbanner" href="#">
+            <img src="../../public/css/images/nailbar.png"/>
+          </a>
+          <nav>
+            <a  href="/">Home</a>
+            <a  href="/services" >Services</a>
+            <a  href="/appointments" >Appointments</a>
+            <a href="/staff" >Staff</a>
+            <a  href="/aboutUs" >About Us</a>
+            <a href="/gallery" >Gallery</a>
+    </nav>
     </header>
     <div>
         @yield('content')
