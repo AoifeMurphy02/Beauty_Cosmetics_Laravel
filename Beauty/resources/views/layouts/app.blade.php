@@ -15,6 +15,7 @@
      
             <nav>
                 <a  href="/">Home</a>
+                <a  href="/services" >Services</a>
                 <a  href="/appointments" >Appointments</a>
                 <a href="/staff" >Staff</a>
                 <a  href="/aboutUs" >About Us</a>

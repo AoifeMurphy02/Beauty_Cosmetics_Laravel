@@ -21,6 +21,12 @@ class PagesController extends Controller
         
         return view('gallery');
     }
+    public function services(){
+        $services = services::all();
+        return view('services', ['services' => $services]);
+        //return view('services');
+    }
+
     public function staff(){
         $staff = staff::all();
         return view('staff', ['staff' => $staff]);
