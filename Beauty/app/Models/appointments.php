@@ -9,4 +9,7 @@ class appointments extends Model
 {
   
     use HasFactory;
+    protected $fillable = [
+        'artist_name', 'position','email'
+    ];
 }
