@@ -17,6 +17,9 @@
                     <td>{{ $staff->artist_name }}</td>
                     <td>{{ $staff->position }}</td>
                     <td>{{ $staff->email }}</td>
+                    <td>
+                        <a href="{{ route('staff.edit', $staff->artist_name) }}">Edit</a>
+                    </td>
                 </tr>
             @empty
                 <tr>

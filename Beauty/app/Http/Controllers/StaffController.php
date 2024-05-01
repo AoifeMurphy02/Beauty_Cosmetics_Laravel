@@ -20,8 +20,7 @@ class StaffController extends Controller
         return view('staff', compact('staffs'));  // Pass the 'staffs' variable to the view
     }
 
-    public function store(Request $request)
-{
+    public function store(Request $request){
     $request->validate([
         'artist_name' => 'required|string|max:255',
         'position' => 'required|string|max:255',
@@ -40,6 +39,30 @@ class StaffController extends Controller
 public function create()
 {
     return view('staff');
+}
+public function edit($artist_name)
+{
+    return view('staffUpdate')
+        ->with('staff', Staff::where('artist_name', $artist_name)->first());
+}
+public function update(Request $request, $artist_name)
+{
+    $request->validate([
+        'position' => 'required',
+        'email' => 'required',
+        
+    ]);
+
+    Staff::where('artist_name', $artist_name)
+        ->update([
+            'position' => $request->input('position'),
+            'email' => $request->input('email'),
+            //'slug' => SlugService::createSlug(Staff::class, 'slug', $request->artist_name),
+            //'user_id' => auth()->user()->id
+        ]);
+
+    return redirect('/staff')
+        ->with('message', 'Staff has been updated!');
 }
 
 }
