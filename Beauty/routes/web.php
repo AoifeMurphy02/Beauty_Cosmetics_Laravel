@@ -14,13 +14,18 @@ Route::get('/appointments', [PagesController::class, 'appointments']);
 Route::get('/aboutUs', [PagesController::class, 'aboutUs']);
 Route::get('/gallery', [PagesController::class, 'gallery']);
 
-Route::get('/services', [ServicesController::class, 'index']);
-Route::get('/services', [ServicesController::class, 'index'])->name('services');
+// Services routes
+Route::get('/services', [ServicesController::class, 'index'])->name('services.index');
 Route::get('/services/create', [ServicesController::class, 'create'])->name('services.create');
 Route::post('/services', [ServicesController::class, 'store'])->name('services.store');
+Route::get('/services/{service_name}/edit', [ServicesController::class, 'edit'])->name('services.edit');
+Route::put('/services/{service_name}', [ServicesController::class, 'update'])->name('services.update');
 
 
 Route::get('/staff', [StaffController::class, 'index']);
 Route::get('/staff', [StaffController::class, 'index'])->name('staff');
 Route::get('/staff/create', [StaffController::class, 'create'])->name('staff.create');
 Route::post('/staff', [StaffController::class, 'store'])->name('staff.store');
+
+Route::get('/staff/{artist_name}/edit', [StaffController::class, 'edit'])->name('staff.edit');
+Route::put('/staff/{artist_name}', [StaffController::class, 'update'])->name('staff.update');

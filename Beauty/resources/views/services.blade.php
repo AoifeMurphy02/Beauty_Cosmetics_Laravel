@@ -17,7 +17,9 @@
                     <td>{{ $service->service_name }}</td>
                     <td>{{ $service->service_description}}</td>
                     <td>{{ $service->service_price}}</td>
-
+                    <td>
+                        <a href="{{ route('services.edit', $service->service_name) }}">Edit</a>
+                    </td>
                 </tr>
             @empty
                 <tr>
@@ -41,7 +43,7 @@
             <label for="service_price">Price:</label>
             <input type="double" class="form-control" id="service_price" name="service_price" required>
         </div>
-        <button type="submit" class="btn btn-primary">Add Service</button>
+        <button type="submit" ">Add Service</button>
     </form>
 @endsection
 
