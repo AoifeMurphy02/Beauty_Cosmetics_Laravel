@@ -1,5 +1,24 @@
-header {
-  background-color: #f166bc;
+@font-face 
+{
+  font-family: 'Beth Ellen';
+
+  src: url(/fonts/BethEllen-Regular.ttf?ffa906155b8b3ef85c3d01be72d4b612) format('truetype');
+
+  font-weight: 400;
+
+  font-style: normal;
+}
+
+.beth-ellen-regular
+   {
+  font-family: 'Beth Ellen', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header 
+{
+  background-color: black;
   padding: 10px 20px;
   border-bottom: 1px solid #dee2e6;
   text-align: center;

@@ -1,7 +1,53 @@
-header {
-    background-color: #f166bc; 
+@font-face 
+{
+    font-family: 'Beth Ellen';
+    src: url('../../public/css/font/BethEllen-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .beth-ellen-regular
+   {
+    font-family: 'Beth Ellen', cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+header 
+{
+    background-color: black; 
     padding: 10px 20px; 
     border-bottom: 1px solid #dee2e6; 
     text-align: center; 
     font-size: 24px; 
 }
+
+
+nav 
+{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    justify-content: flex-end
+    }
+    
+    nav a 
+    {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    footer 
+    {
+        background-color: black;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
