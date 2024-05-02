@@ -22,6 +22,7 @@
             <a href="/staff" >Staff</a>
             <a  href="/aboutUs" >About Us</a>
             <a href="/gallery" >Gallery</a>
+            <a href="/register" >Register</a>
     </nav>
     </header>
     <div>
