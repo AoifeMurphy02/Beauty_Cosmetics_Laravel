@@ -33,7 +33,9 @@ class ServicesController extends Controller
         $services->service_description = $request->service_description;
         $services->service_price = $request->service_price;
         $services->save();
-        return redirect()->route('services')->with('success', 'Service was added successfully!');
+
+        return redirect()->route('services.index')->
+        with('success', 'Service was added successfully!');
     
     }
 
@@ -47,8 +49,8 @@ class ServicesController extends Controller
         return view('serviceUpdate')
         ->with('service', Services::where('service_name', $service_name)->first());
     }
-    public function update(Request $request, $service_name)
-    {
+
+    public function update(Request $request, $service_name){
     $request->validate([
         'service_name' => 'required',
         'service_description' => 'required',
@@ -62,8 +64,11 @@ class ServicesController extends Controller
         'service_price' => $request->input('service_price')
     ]);
 
-    return redirect()->route('services.index')
+  return redirect()->route('services.index')
     ->with('message', 'Service has been updated!');
 }
 
+
+
 }
+
