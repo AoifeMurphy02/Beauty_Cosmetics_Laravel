@@ -9,7 +9,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ServicesController;
 
-Route::get("/", [PagesController::class, 'index']);
+Route::get('/', [PagesController::class, 'index'])->name('index');
 Route::get('/appointments', [PagesController::class, 'appointments']);
 Route::get('/aboutUs', [PagesController::class, 'aboutUs']);
 Route::get('/gallery', [PagesController::class, 'gallery']);
@@ -29,3 +29,5 @@ Route::post('/staff', [StaffController::class, 'store'])->name('staff.store');
 
 Route::get('/staff/{artist_name}/edit', [StaffController::class, 'edit'])->name('staff.edit');
 Route::put('/staff/{artist_name}', [StaffController::class, 'update'])->name('staff.update');
+
+Auth::routes();
