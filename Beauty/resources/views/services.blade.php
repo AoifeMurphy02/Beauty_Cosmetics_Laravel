@@ -43,7 +43,7 @@
             <label for="service_price">Price:</label>
             <input type="double" class="form-control" id="service_price" name="service_price" required>
         </div>
-        <button type="submit" ">Add Service</button>
+        <button type="submit">Add Service</button>
     </form>
 @endsection
 
