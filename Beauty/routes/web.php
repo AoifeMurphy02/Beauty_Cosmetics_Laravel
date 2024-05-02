@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\AppointmentController;
 
 Route::get('/', [PagesController::class, 'index'])->name('index');
 Route::get('/appointments', [PagesController::class, 'appointments']);
@@ -17,9 +18,13 @@ Route::get('/gallery', [PagesController::class, 'gallery']);
 // Services routes
 Route::get('/services', [ServicesController::class, 'index'])->name('services.index');
 Route::get('/services/create', [ServicesController::class, 'create'])->name('services.create');
+
 Route::post('/services', [ServicesController::class, 'store'])->name('services.store');
 Route::get('/services/{service_name}/edit', [ServicesController::class, 'edit'])->name('services.edit');
 Route::put('/services/{service_name}', [ServicesController::class, 'update'])->name('services.update');
+Route::get('/appointments/create', 'AppointmentController@create')->name('appointments.create');
+Route::post('/appointments/store', 'AppointmentController@store')->name('appointments.store');
+
 
 
 Route::get('/staff', [StaffController::class, 'index']);
@@ -29,5 +34,12 @@ Route::post('/staff', [StaffController::class, 'store'])->name('staff.store');
 
 Route::get('/staff/{artist_name}/edit', [StaffController::class, 'edit'])->name('staff.edit');
 Route::put('/staff/{artist_name}', [StaffController::class, 'update'])->name('staff.update');
+
+
+Route::get('/appointments', [AppointmentController::class, 'index'])->name('appointments.index');
+Route::get('/appointments/create', [AppointmentController::class, 'create'])->name('appointments.create');
+
+Route::post('/appointments', [AppointmentController::class, 'store'])->name('appointments.store');
+
 
 Auth::routes();

@@ -14,7 +14,7 @@ return new class extends Migration
         $table->unsignedBigInteger('staff_id');
         $table->unsignedBigInteger('customer_id');
         $table->unsignedBigInteger('service_id');
-        $table->timestamp('time');
+        $table->time('time');
         $table->date('date');
         $table->timestamps();
     })
