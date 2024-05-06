@@ -10,6 +10,13 @@ class Staff extends Model
     use HasFactory;
 
     protected $fillable = [
-        'artist_name', 'position','email'
+        'staff_id','artist_name', 'position','email'
     ];
+    protected $primaryKey = 'staff_id';
+
+    public function appointments()
+    {
+        
+        return $this->hasMany(Appointment::class);
+    }
 }
