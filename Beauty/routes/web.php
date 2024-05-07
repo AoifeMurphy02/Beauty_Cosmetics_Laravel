@@ -45,3 +45,11 @@ Route::put('/appointments/{appointment}/update', [AppointmentController::class, 
 Route::get('/api/available-times/{staff_id}/{date}', [AppointmentController::class, 'availableTimes']);
 
 Auth::routes();
+
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/test', function () {
+    return 'Test route works!';
+});
+
+
