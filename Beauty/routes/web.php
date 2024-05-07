@@ -22,6 +22,7 @@ Route::get('/services/create', [ServicesController::class, 'create'])->name('ser
 Route::post('/services', [ServicesController::class, 'store'])->name('services.store');
 Route::get('/services/{service_name}/edit', [ServicesController::class, 'edit'])->name('services.edit');
 Route::put('/services/{service_name}', [ServicesController::class, 'update'])->name('services.update');
+
 Route::get('/appointments/create', 'AppointmentController@create')->name('appointments.create');
 Route::post('/appointments/store', 'AppointmentController@store')->name('appointments.store');
 

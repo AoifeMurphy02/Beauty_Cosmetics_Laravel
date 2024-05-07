@@ -7,6 +7,15 @@
     @csrf
     @method('PUT') 
     <table class="table">
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
         <thead>
             <tr>
                 <th>Service Name</th>
@@ -56,6 +65,10 @@
     <div class="form-group">
         <label for="time">Time:</label>
         <input type="time" class="form-control" id="time" name="time" value="{{ $appointment->time }}" required>
+    </div>
+    <div class="form-group">
+        <label for="customer_id">Customer ID:</label>
+        <input type="text" class="form-control" id="customer_id" name="customer_id" value="{{ $appointment->customer_id }}" required>
     </div>
     <div class="form-group">
         <label for="date">Date:</label>

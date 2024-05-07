@@ -73,11 +73,11 @@ class AppointmentController extends Controller
     return redirect()->route('appointments.index')
                      ->with('success', 'Appointment deleted successfully');
 }
-public function edit($appointment_id)
-{
+public function edit($appointment_id) {
     $appointment = Appointments::findOrFail($appointment_id);
-    $services = Services::all();  
-    $staffs = Staff::all();      
+    $services = Services::all();
+    $staffs = Staff::all();
+
     return view('appointmentUpdate', [
         'appointment' => $appointment,
         'services' => $services,
@@ -88,27 +88,28 @@ public function edit($appointment_id)
 
 
 
-public function update(Request $request, $appointment_id){
-    $validated = $request->validate([
+
+public function update(Request $request, $appointment_id) {
+    $request->validate([
         'staff_id' => 'required|numeric',
-        'customer_id' => 'required|numeric', 
+        'customer_id' => 'required|numeric',
         'service_id' => 'required|numeric',
         'time' => 'required',
         'date' => 'required|date',
-        
     ]);
 
-    Appointments::where('appointment_id', $appointment_id)->
-  update([
-        'staff_id' => $request->input('staff_id'),
-        'service_id' => $request->input('service_id'),
-        'time' => $request->input('time'),
-        'date' => $request->input('date')
-    ]);
+    $appointment = Appointments::findOrFail($appointment_id);
+    $appointment->staff_id = $request->staff_id;
+    $appointment->customer_id = $request->customer_id;
+    $appointment->service_id = $request->service_id;
+    $appointment->time = $request->time;
+    $appointment->date = $request->date;
+    $appointment->save();
 
-    return redirect()->route('index')->
-    with('message', 'Appointment has been updated!');
+    return redirect()->route('appointments.index')
+    ->with('success', 'Appointment has been updated!');
 }
+
 public function availableSlots(Request $request)
 {
     $date = $request->date; // Date for which the user wants to see available slots
