@@ -26,7 +26,7 @@
                 </div>
                 <nav>
                     <a class="headerbanner" href="#">
-                        <img src="{{ asset('css/images/nailbar.png') }}"/>
+                        <img src="{{ asset('css/images/nailbar.png') }}" width="100" height="auto"/>
                     </a>
                     <a href="/">Home</a>
                     <a href="/services">Services</a>
@@ -60,3 +60,4 @@
     </div>
 </body>
 </html>
+@extends('layouts.footer')
