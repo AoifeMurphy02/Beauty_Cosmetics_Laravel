@@ -13,7 +13,7 @@
         </thead>
         <tbody>
             @forelse($staffs as $key => $staff)
-                <tr class="staff_table">
+                <tr >
                     <td>{{ $staff->artist_name }}</td>
                     <td>{{ $staff->position }}</td>
                     <td>{{ $staff->email }}</td>
