@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Appointments;
 use App\Models\Services;
 use App\Models\Staff;
+use Illuminate\Support\Facades\Auth;
 
 class AppointmentController extends Controller
 {
@@ -16,11 +17,18 @@ class AppointmentController extends Controller
         $appointments = Appointments::with(['staff', 'service'])->get();
         $services = Services::all(); 
         $staffs = Staff::all();
+        $userId = Auth::id();
+
+       
+        $userAppointments = Appointments::with(['staff', 'service'])
+                                 ->where('customer_id', $userId)
+                                 ->get();
 
         return view('appointments', [
             'appointments' => $appointments,
             'services' => $services,
-            'staffs' => $staffs
+            'staffs' => $staffs,
+            'userAppointments' => $userAppointments, // Pass user appointments to the view
         ]);
     }
 
@@ -29,7 +37,7 @@ class AppointmentController extends Controller
     {
         $validated = $request->validate([
             'staff_id' => 'required|numeric',
-            'customer_id' => 'required|numeric', 
+          
             'service_id' => 'required|numeric',
             'time' => 'required',
             'date' => 'required|date',
@@ -47,7 +55,7 @@ class AppointmentController extends Controller
     
         $appointment = new Appointments($validated);
         $appointment->staff_id = $request->staff_id;
-        $appointment->customer_id = $request->customer_id;
+        $appointment->customer_id = auth()->id();
         $appointment->service_id = $request->service_id;
         $appointment->time = $request->time;
         $appointment->date = $request->date;
