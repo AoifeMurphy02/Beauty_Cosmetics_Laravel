@@ -141,8 +141,28 @@ public function availableSlots(Request $request)
         'date' => $date
     ]);
 }
+public function fetchAvailableTimes(Request $request)
+{
+    $staffId = $request->staff_id;
+    $date = $request->date;
 
+    $bookedTimes = Appointments::where('staff_id', $staffId)
+                               ->where('date', $date)
+                               ->pluck('time')
+                               ->map(function ($time) {
+                                   return date('H:i', strtotime($time));
+                               })->toArray();
 
+    $allSlots = collect(range(9, 17))->map(function ($hour) {
+        return sprintf("%02d:00", $hour); 
+    });
 
-}     
-    
+    $availableTimes = $allSlots->reject(function ($time) use ($bookedTimes) {
+        return in_array($time, $bookedTimes);
+    });
+
+    return response()->json([
+        'availableTimes' => $availableTimes->values()
+    ]);
+}
+}

@@ -43,6 +43,8 @@ Route::delete('appointments/{appointment}', [AppointmentController::class, 'dest
 Route::get('/appointments/{appointment}/edit', [AppointmentController::class, 'edit'])->name('appointments.edit');
 Route::put('/appointments/{appointment}/update', [AppointmentController::class, 'update'])->name('appointments.update');
 Route::get('/api/available-times/{staff_id}/{date}', [AppointmentController::class, 'availableTimes']);
+Route::get('/appointments/available-times', [AppointmentController::class, 'fetchAvailableTimes']);
+
 
 Auth::routes();
 
