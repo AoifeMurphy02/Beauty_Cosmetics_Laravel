@@ -60,3 +60,87 @@ footer
   width: 100%;
 }
 
+.staff_table, .Service_table, .appointment_table {
+  margin: 20px auto; 
+  width: 50%;
+  border-collapse: collapse;
+}
+
+.staff_table th, .staff_table td, .Service_table th, .Service_table td, .appointment_table th, .appointment_table td  {
+  
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.staff_table th, .Service_table th, .appointment_table th {
+  background-color: #f2f2f2;
+}
+
+.staff_table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.Service_table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.staff_table tr:hover {
+  background-color: #ddd;
+}
+
+.Service_table tr:hover {
+  background-color: #ddd;
+}
+.appointment_table tr:hover {
+  background-color: #ddd;
+}
+
+.form-group {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  text-align: center;
+  display: block;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 20%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  text-align: center;
+  background-color: palevioletred;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: pink;
+}
+.title{
+  text-align: center;
+  font-weight:bold;
+}
+    .calendar {
+      width: 60%; 
+      margin: 0 auto; 
+      text-align: center;
+      background-color: #fff; 
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+      padding: 20px;
+      border-radius: 8px;
+  }
+

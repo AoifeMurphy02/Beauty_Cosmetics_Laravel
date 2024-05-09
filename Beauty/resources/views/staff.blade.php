@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Staff</h1>
+    <h1 class="title">Our Staff</h1>
     <table class="staff_table">
         <thead>
             <tr>
@@ -9,6 +9,7 @@
                 <th>Name</th>
                 <th>Position</th>
                 <th>Email</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -29,7 +30,7 @@
         </tbody>
     </table>
 
-    <h1>Add New Staff</h1>
+    <h1 class="title">Add New Staff</h1>
     <form method="POST" action="{{ route('staff.store') }}">
         @csrf
         <div class="form-group">
@@ -46,4 +47,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Add Staff</button>
     </form>
+    <br/>
+    <br/>
+    <br/>
 @endsection
