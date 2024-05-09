@@ -67,8 +67,7 @@
         <input type="time" class="form-control" id="time" name="time" value="{{ $appointment->time }}" required>
     </div>
     <div class="form-group">
-        <label for="customer_id">Customer ID:</label>
-        <input type="text" class="form-control" id="customer_id" name="customer_id" value="{{ $appointment->customer_id }}" required>
+        <input type="hidden" class="form-control" id="customer_id" name="customer_id" value="{{ auth()->id() }}" required>
     </div>
     <div class="form-group">
         <label for="date">Date:</label>

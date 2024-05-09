@@ -2,10 +2,9 @@
 
 @section('content')
 
-<!--for admin -->
-<h1>All Appointment</h1>
-<table>
-    <thead>
+@if ($userAppointments->isNotEmpty())
+<h2>My Appointments</h2>
+    <table class="table">
         <tr>
            
             <th>Staff Name</th>
@@ -14,35 +13,27 @@
             <th>Date</th>
             <th>Price</th>
         </tr>
-    </thead>
-    <tbody>
-        @forelse($appointments as $key => $appointment)
-        <tr>
-            <td>{{ $appointment->staff->artist_name ?? 'Staff Not Found' }}</td>
-            <td>{{ $appointment->service->service_name ?? 'Service Not Found' }}</td>
-            <td>{{ $appointment->time}}</td>
-            <td>{{ $appointment->date}}</td>
-            <td>€{{ number_format($appointment->service->service_price ?? 0, 2) }}</td>
-            <td>
-                <a href="{{ route('appointments.edit', $appointment->appointment_id) }}">Edit</a>
-            </td>
-            <td>
-               
-                <form action="{{ route('appointments.destroy', $appointment->appointment_id) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit">Delete</button>
-                </form>
-            </td>
-        </tr>
-        @empty
+        <tbody>
+            @foreach($userAppointments as $appointment)
             <tr>
-                <td>No appointments found.</td>
+                <td>{{ $appointment->staff->artist_name ?? 'Staff Not Found' }}</td>
+                <td>{{ $appointment->service->service_name ?? 'Service Not Found' }}</td>
+                <td>{{ $appointment->time }}</td>
+                <td>{{ $appointment->date }}</td>
+                <td>€{{ number_format($appointment->service->service_price ?? 0, 2) }}</td>
+                <td>
+               
+                    <form action="{{ route('appointments.destroy', $appointment->appointment_id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
             </tr>
-        @endforelse
-    </tbody>
-</table>
-
+            @endforeach
+        </tbody>
+    </table>
+    @endif
     <h1>Appointment Form</h1>
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -118,8 +109,8 @@
         </table>
         
         <div class="form-group">
-            <label for="customer_id">Customer ID:</label>
-            <input type="text" class="form-control" id="customer_id" name="customer_id" required>
+
+            <input type="hidden" class="form-control" id="customer_id" name="customer_id" value="{{ auth()->id() }}" required>
         </div>
         <div class="form-group">
         <label for="date">Date:</label>
@@ -133,10 +124,46 @@
     </form>
 </br>
 </br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
+<!--for admin -->
+@if (Auth::check())
+<h1>All Appointment</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Staff Name</th>
+            <th>Service Name</th>
+            <th>Time</th>
+            <th>Date</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @forelse($appointments as $key => $appointment)
+        <tr>
+            <td>{{ $appointment->staff->artist_name ?? 'Staff Not Found' }}</td>
+            <td>{{ $appointment->service->service_name ?? 'Service Not Found' }}</td>
+            <td>{{ $appointment->time}}</td>
+            <td>{{ $appointment->date}}</td>
+            <td>€{{ number_format($appointment->service->service_price ?? 0, 2) }}</td>
+            <td>
+                <a href="{{ route('appointments.edit', $appointment->appointment_id) }}">Edit</a>
+            </td>
+            <td>
+               
+                <form action="{{ route('appointments.destroy', $appointment->appointment_id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        @empty
+            <tr>
+                <td>No appointments found.</td>
+            </tr>
+        @endforelse
+    </tbody>
+</table>
+@endif
 @endsection
+
