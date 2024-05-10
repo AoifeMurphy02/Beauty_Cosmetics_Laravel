@@ -144,3 +144,19 @@ footer
       border-radius: 8px;
   }
 
+  .background-image {
+    background-image: url('https://www.thelist.com/img/gallery/the-biggest-mistakes-everyone-makes-with-gel-nails/l-intro-1670359663.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    height: 100vh; /* Ensuring it covers the full viewport height */
+    width: 100vw;   /* Cover the full viewport width */
+    position: absolute; /* Optional based on your layout needs */
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    z-index: -1; /* Makes it a background layer if other content must be over it */
+}
