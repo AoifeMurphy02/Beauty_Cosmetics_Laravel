@@ -18,9 +18,11 @@
                     <td>{{ $staff->artist_name }}</td>
                     <td>{{ $staff->position }}</td>
                     <td>{{ $staff->email }}</td>
+                    @if(Auth::check() && Auth::user()->isAdmin())
                     <td>
                         <a href="{{ route('staff.edit', $staff->artist_name) }}">Edit</a>
                     </td>
+                    @endif
                 </tr>
             @empty
                 <tr>
@@ -30,6 +32,7 @@
         </tbody>
     </table>
 
+    @if(Auth::check() && Auth::user()->isAdmin())
     <h1 class="title">Add New Staff</h1>
     <form method="POST" action="{{ route('staff.store') }}">
         @csrf
@@ -50,4 +53,5 @@
     <br/>
     <br/>
     <br/>
+    @endif
 @endsection

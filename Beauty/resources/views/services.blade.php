@@ -18,9 +18,11 @@
                     <td>{{ $service->service_name }}</td>
                     <td>{{ $service->service_description}}</td>
                     <td>{{ $service->service_price}}</td>
+                    @if(Auth::check() && Auth::user()->isAdmin())
                     <td>
                         <a href="{{ route('services.edit', $service->service_name) }}">Edit</a>
                     </td>
+                    @endif
                 </tr>
             @empty
                 <tr>
@@ -29,6 +31,8 @@
             @endforelse
         </tbody>
     </table>
+
+    @if(Auth::check() && Auth::user()->isAdmin())
     <h1 class="title">Add A New Service</h1>
     <form method="POST" action="{{ route('services.store') }}">
         @csrf
@@ -50,5 +54,6 @@
     <br/>
     <br/>
     <br/>
+    @endif
 @endsection
 

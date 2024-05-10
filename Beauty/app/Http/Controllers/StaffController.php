@@ -7,7 +7,11 @@ use App\Models\Staff;
   
 class StaffController extends Controller
 {
-  
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index']]);
+        $this->middleware('checkrole:admin')->only(['create', 'store', 'edit', 'update']);
+    }
     /**
      * Write code on Method
      *
