@@ -61,6 +61,15 @@
         </tbody>
     </table>
     @endif
+
+    @if (!Auth::check())
+    <div>
+        <a href="{{ route('login') }}" class="btn btn-primary">Log in to Book Appointment</a>
+    </div>
+@endif
+
+
+@if (Auth::check() && Auth::user()->isUser())
     <h1 class="title">Book Now</h1>
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -166,8 +175,10 @@
     </form>
 </br>
 </br>
+@endif
 <!--for admin -->
-@if (Auth::check())
+
+@if(Auth::check() && Auth::user()->isAdmin())
 <h1 class="title">All Appointment</h1>
 <table class="appointment_table">
     <thead>
@@ -177,7 +188,7 @@
             <th>Time</th>
             <th>Date</th>
             <th>Price</th>
-            <th> <th/>
+            <th> </th>
             
         </tr>
     </thead>
@@ -212,6 +223,7 @@
 <br/>
 <br/>
 <br/>
+
 @endif
 <script>
     function generateCalendar(year, month) {
@@ -277,6 +289,6 @@
         generateCalendar(currentYear, currentMonth);
     });
     </script>
-    
+   
 @endsection
 
