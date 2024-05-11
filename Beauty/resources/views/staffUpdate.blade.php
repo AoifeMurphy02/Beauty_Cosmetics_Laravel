@@ -18,6 +18,14 @@
             <label for="email">Email:</label>
             <input type="email" class="form-control" name="email" value="{{ $staff->email }}" required>
         </div>
+        <div class="form-group">
+            <label for="image">Current Image:</label>
+            <div>
+                <img src="{{ asset('images/' . $staff->image_path) }}" alt="{{ $staff->artist_name }}" style="max-width: 200px;">
+            </div>
+            <label for="image">Update Image:</label>
+            <input type="file" class="form-control" id="image" name="image">
+        </div>
         <button type="submit" class="btn btn-primary">Update Staff</button>
     </form>
 </div>
