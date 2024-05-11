@@ -14,6 +14,7 @@ return new class extends Migration
         $table->string('artist_name');
         $table->string('position');
         $table->string('email');
+        $table->string('image_path')->nullable(); 
         $table->timestamps();
     });
 }

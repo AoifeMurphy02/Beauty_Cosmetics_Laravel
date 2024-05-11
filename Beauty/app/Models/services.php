@@ -11,6 +11,9 @@ class Services extends Model
     protected $fillable = [
        'service_id', 'service_name', 'service_description','service_price'
     ];
+
+    protected $primaryKey = 'service_id';
+
     
     public function appointments()
     {
