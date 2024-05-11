@@ -29,12 +29,17 @@ class StaffController extends Controller
         'artist_name' => 'required|string|max:255',
         'position' => 'required|string|max:255',
         'email' => 'required|email|unique:staff,email', // Ensure the email is unique in the 'staff' table
+        'image' => 'required|mimes:jpg,png,jpeg|max:5048'
     ]);
+
+    $newImageName = uniqid() . '-' . $request->artist_name . '.' . $request->image->extension();
+    $request->image->move(public_path('images'), $newImageName);
 
     $staff = new Staff();
     $staff->artist_name = $request->artist_name;
     $staff->position = $request->position;
     $staff->email = $request->email;
+    $staff->image_path = $newImageName;
     $staff->save();
     return redirect()->route('staff')->with('success', 'Staff added successfully!');
 
@@ -54,16 +59,20 @@ public function update(Request $request, $artist_name)
     $request->validate([
         'position' => 'required',
         'email' => 'required',
-        
+        'image' => 'sometimes|mimes:jpg,png,jpeg|max:5048'
     ]);
 
-    Staff::where('artist_name', $artist_name)
-        ->update([
-            'position' => $request->input('position'),
-            'email' => $request->input('email'),
-            //'slug' => SlugService::createSlug(Staff::class, 'slug', $request->artist_name),
-            //'user_id' => auth()->user()->id
-        ]);
+    $staff = Staff::where('artist_name', $artist_name)->first();
+
+        if ($request->hasFile('image')) {
+            $newImageName = uniqid() . '-' . $request->artist_name . '.' . $request->image->extension();
+            $request->image->move(public_path('images'), $newImageName);
+            $staff->image_path = $newImageName; // Update the image path
+        }
+
+        $staff->position = $request->input('position');
+        $staff->email = $request->input('email');
+        $staff->save();
 
     return redirect('/staff')
         ->with('message', 'Staff has been updated!');
