@@ -216,3 +216,42 @@ footer
     padding: 0;
     z-index: -1; /* Makes it a background layer if other content must be over it */
 }
+.footer-columns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-column {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footer-column h3 {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+}
+
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
