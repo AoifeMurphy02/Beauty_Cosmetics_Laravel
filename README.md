@@ -56,3 +56,15 @@ Migrate database tables
 ```
 php artisan migrate
 ```
+## To compile laravel mix <img src="https://since1979.dev/wp-content/uploads/2019/05/laravel-mix-logo.jpeg" alt="alt text" width="30">
+
+```
+composer require laravel-frontend-presets/tailwindcss --dev
+php artisan ui tailwindcss --auth
+npm remove laravel-mix
+npm install laravel-mix --save-dev
+npm install cross-env --save-dev
+npm run watch
+```
+## Contributing
+Do not hesitate to contribute to the project by adapting or adding features Bug reports or pull requests are welcome.
