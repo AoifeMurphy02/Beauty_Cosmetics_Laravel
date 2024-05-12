@@ -7,6 +7,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/footer.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -14,6 +15,7 @@
             <div class="container">
                 <nav class="navigation">
                     <a href="/" class="nav-link">Home</a>
+                    <a href="/aboutUs" class="nav-link">About</a>
                     <a href="/services" class="nav-link">Services</a>
                     <a href="/appointments" class="nav-link">Appointments</a>
                     <a href="{{ url('/') }}" class="nav-logo">
@@ -39,5 +41,9 @@
         </header>
         @yield('content')
     </div>
+    @include('layouts.footer')
+   
+    
+
 </body>
 </html>
