@@ -3,53 +3,34 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
-    <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-   
-
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet"> <!-- Link to custom CSS -->
 </head>
 <body>
     <div id="app">
-        <header>
-            <div class="container mx-auto flex justify-between items-center px-6">
-                <div>
-                    <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
-                        {{ config('app.name', 'Nail Bar') }}
+        <header class="header">
+            <div class="container">
+                <nav class="navigation">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/services" class="nav-link">Services</a>
+                    <a href="/appointments" class="nav-link">Appointments</a>
+                    <a href="{{ url('/') }}" class="nav-logo">
+                        GLAMOUR TOUCH
+                        <span class="logo-subtext">Nails & Beauty</span>
                     </a>
-                </div>
-                <nav>
-                    <a class="headerbanner" href="#">
-                        <img src="{{ asset('css/images/nailbar.png') }}" width="100" height="auto"/>
-                    </a>
-                    <a href="/">Home</a>
-                    <a href="/services">Services</a>
-                    <a href="/appointments">Appointments</a>
-                    <a href="/staff">Staff</a>
-                    <a href="/aboutUs">About Us</a>
-                    <a href="/gallery">Gallery</a>
-                </nav>
-                <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
+                    <a href="/staff" class="nav-link">Staff</a>
+                    <a href="/gallery" class="nav-link">Gallery</a>
                     @guest
-                        <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-button" href="{{ route('login') }}">{{ __('Login') }}</a>
                         @if (Route::has('register'))
-                            <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-button" href="{{ route('register') }}">{{ __('Register') }}</a>
                         @endif
                     @else
-                        <span>{{ Auth::user()->name }}</span>
-
-                        <a href="{{ route('logout') }}"
-                           class="no-underline hover:underline"
-                           onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                        <span class="nav-user">{{ Auth::user()->name }}</span>
+                        <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                             {{ csrf_field() }}
                         </form>
@@ -57,9 +38,7 @@
                 </nav>
             </div>
         </header>
-
         @yield('content')
     </div>
 </body>
 </html>
-@extends('layouts.footer')
