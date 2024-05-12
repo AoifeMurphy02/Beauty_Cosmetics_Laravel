@@ -1,11 +1,11 @@
 ## Glamour Touch Nails & Beauty
 Welcome to the Glamour Touch Nails & Beauty Appointment Booking Website! This project aims to provide a seamless online platform for clients to schedule appointments for nail and beauty services offered by Glamour Touch Nails & Beauty salon.
 ## Authors
-✨ Meghana Rathnam Kuppala
+✨ [Meghana Rathnam Kuppala](https://github.com/RathnamMeghana)
 <br>
-✨ Aoife Murphy
+✨ [Aoife Murphy](https://github.com/AoifeMurphy02)
 <br>
-✨ Meghan Keightley
+✨ [Meghan Keightley](https://github.com/meghank1066)
 
 ## <img src="https://emojigraph.org/media/microsoft/woman-technologist_1f469-200d-1f4bb.png" alt="alt text" width="40"> Technologies Used 
 
@@ -13,18 +13,32 @@ Welcome to the Glamour Touch Nails & Beauty Appointment Booking Website! This pr
 
 
 ## Features
-- Account Registration/Login: Including admin user and customer user types.
-- Home: User friendly home page that keeps the customers engaged.
-- About: Customers can view information about the nail salon.
-- Staff Page: User can view all staff working at the salon. An admim can create, edit and delete a member of staff.
-- Services Page: User can view all services the salon offers. An admim can create, edit and delete a service.
-- Create appointment: loged in users can easily create an appointemnt where they can pick what service and staff they would like.
-- View appointment: Loged in Users can view all their appoiments, an admin can view all appoments and edit and delete them. 
-- Delete appointment: Users can easily delete one of their own appointments.
-- Image Uploads: Allows admin users to upload images for staff and services.
+✨ Account Registration/Login: Including admin user and customer user types.
+<br>
+✨ Home: User friendly home page that keeps the customers engaged.
+<br>
+✨ About: Customers can view information about the nail salon.
+<br>
+✨ Staff Page: User can view all staff working at the salon. An admim can create, edit and delete a member of staff.
+<br>
+✨ Services Page: User can view all services the salon offers. An admim can create, edit and delete a service.
+<br>
+✨ Create appointment: loged in users can easily create an appointemnt where they can pick what service and staff they would like.
+<br>
+✨ View appointment: Loged in Users can view all their appoiments, an admin can view all appoments and edit and delete them.
+<br>
+✨ Delete appointment: Users can easily delete one of their own appointments.
+<br>
+✨ Image Uploads: Allows admin users to upload images for staff and services.
+
+## Requirements
+✨	PHP 7.3 or higher <br>
+✨	Node 12.13.0 or higher <br>
+✨	XAMPP
+
 
 ## Usage <br>
-Setting up your development environment on your local machine: <br>
+✨ Setting up your development environment on your local machine: <br>
 ```
 git clone https://github.com/RathnamMeghana/Beauty_Cosmetics_Laravel.git
 cd beauty
@@ -36,14 +50,14 @@ php artisan serve
 ```
 
 ## Before starting <br>
-Create a database <br>
+✨ Create a database <br>
 ```
 mysql
 create database beauty;
 exit;
 ```
 
-Setup your database credentials in the .env file
+✨ Setup your database credentials in the .env file
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -52,12 +66,11 @@ DB_DATABASE=beauty
 DB_USERNAME={USERNAME}
 DB_PASSWORD={PASSWORD}
 ```
-Migrate database tables
+✨ Migrate database tables
 ```
 php artisan migrate
 ```
-## To compile laravel mix <img src="https://since1979.dev/wp-content/uploads/2019/05/laravel-mix-logo.jpeg" alt="alt text" width="30">
-
+## <img src="https://since1979.dev/wp-content/uploads/2019/05/laravel-mix-logo.jpeg" alt="alt text" width="30"> To compile laravel mix 
 ```
 composer require laravel-frontend-presets/tailwindcss --dev
 php artisan ui tailwindcss --auth
