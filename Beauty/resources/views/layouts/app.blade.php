@@ -26,7 +26,6 @@
                     </a>
                     <a href="/staff" class="nav-link">Staff</a>
                     <a href="/gallery" class="nav-link">Gallery</a>
-                    <a href="/aboutUs" class="nav-link">About</a>
                     @guest
                         <a class="nav-button" href="{{ route('login') }}">{{ __('Login') }}</a>
                         @if (Route::has('register'))

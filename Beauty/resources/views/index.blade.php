@@ -86,7 +86,85 @@
             </div>
         </div>
     </div>
-</section><section class="py-12">
+</section>
+
+
+<section id="services" class="py-12">
+    <div class="container mx-auto">
+        <div class="flex flex-col items-center">
+            <h2 id="about-heading" class="text-3xl lg:text-4xl font-bold mb-4">Inspiration for your next appointment!</h2>
+            <div class="flex flex-wrap justify-center">
+                <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://i.pinimg.com/originals/8f/9c/80/8f9c804fe64d74cb60ec18936ba8fa9c.jpg" alt="Nail Art 1" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://i.pinimg.com/originals/c7/93/0a/c7930a3022399c62c8e7dbd33bf92362.jpg" alt="Nail Art 2" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://i.pinimg.com/originals/b7/62/6a/b7626a85dda15b295f1aedb3fdf5b963.jpg" alt="Nail Art 3" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+            <!-- View More Button -->
+            <a href="/gallery" class="buttonbg2">
+                Nail Design Gallery
+            </a>
+            
+        </div>
+    </div>
+</section>
+
+<section id="news" class="py-12">
+    <div class="container mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4">Latest News</h2>
+        <div class="flex flex-wrap justify-center">
+            <!-- News Article 1 -->
+            <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-4 mb-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://i.pinimg.com/564x/33/b7/f9/33b7f94c8dcd3f4f342bd398c1fc50c7.jpg" alt="News Article 1" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Supporting Local: Glamour Touch Donates Proceeds to Make A Wish Foundation</h3>
+                        <p class="text-gray-700 mb-2">As part of our commitment to our community, we're donating a portion of our proceeds to support the Charity's essential services. Join us in making a difference together!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- News Article 2 -->
+            <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-4 mb-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://i.pinimg.com/564x/c9/4a/c5/c94ac533bc0d6083ecd92bfc728b3d80.jpg" alt="News Article 2" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Nail Salon of the Year 2024: Celebrating Our Victory!</h3>
+                        <p class="text-gray-700 mb-2">Proudly announcing our triumph as the esteemed Nail Salon of the Year 2024</p>
+                    </div>
+                </div>
+            </div>
+            <!-- News Article 3 -->
+            <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/3 px-4 mb-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://i.pinimg.com/736x/66/b1/41/66b141da8b40c83a3c3204de47d12fcc.jpg" alt="News Article 3" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Expert Tips for Nail Care</h3>
+                        <p class="text-gray-700 mb-2">Learn essential expert tips for maintaining healthy and beautiful nails with our comprehensive guide on nail care</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <a href="https://www.dundalkdemocrat.ie/" class="inline-block bg-customPink hover:bg-customPink text-white font-bold py-2 px-4 rounded">View More News</a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="py-12">
     <div class="container mx-auto">
         <h2 class="text-3xl lg:text-4xl font-bold text-customPink mb-4">Nails For Every Budget</h2>
         <p class="text-lg text-gray-500 mb-6">FROM 01.01.24 TO 31.12.24</p>
@@ -109,6 +187,7 @@
         </div>
     </div>
 </section>
+
 
 
 @endsection

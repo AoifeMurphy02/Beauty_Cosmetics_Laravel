@@ -1,12 +1,15 @@
 @extends('layouts.app')
 
+
 @section('content')
-<main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
+<div class="bg-nailbglog pt-20 pb-20 bg-cover backdrop-blur-lg"> 
+<main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10 s">
+
     <div class="flex">
-        <div class="w-full">
+        <div class="w-full rounded-lg border-5 border-white pt-10"> 
             <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
 
-                <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
+               <header class="font-semibold bg-black text-white py-4 px-8 sm:py-8 sm:pt-8 sm:rounded-t-md text-2xl text-center"> 
                     {{ __('Register') }}
                 </header>
 
@@ -19,7 +22,7 @@
                             {{ __('Name') }}:
                         </label>
 
-                        <input id="name" type="text" class="form-input w-full @error('name')  border-red-500 @enderror"
+                        <input id="name" type="text" class="form-input w-full @error('name') border-red-500 @enderror"
                             name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                         @error('name')
@@ -31,7 +34,7 @@
 
                     <div class="flex flex-wrap">
                         <label for="email" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
-                            {{ __('E-Mail Address') }}:
+                            {{ __('Email Address') }}:
                         </label>
 
                         <input id="email" type="email"
@@ -72,13 +75,13 @@
 
                     <div class="flex flex-wrap">
                         <button type="submit"
-                            class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700 sm:py-4">
+                            class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-white bg-customPink hover:bg-contrastPink sm:py-4">
                             {{ __('Register') }}
                         </button>
 
                         <p class="w-full text-xs text-center text-gray-700 my-6 sm:text-sm sm:my-8">
                             {{ __('Already have an account?') }}
-                            <a class="text-blue-500 hover:text-blue-700 no-underline hover:underline" href="{{ route('login') }}">
+                            <a class="text-customPink hover:text-customPink no-underline hover:underline" href="{{ route('login') }}">
                                 {{ __('Login') }}
                             </a>
                         </p>
@@ -89,4 +92,6 @@
         </div>
     </div>
 </main>
+</div>
 @endsection
+
