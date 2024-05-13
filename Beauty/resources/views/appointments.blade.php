@@ -179,7 +179,8 @@
                     <th>Time</th>
                     <th>Date</th>
                     <th>Price</th>
-                    <th></th>
+                    <th>Update</th>
+                    <th>Cancel</th>
                 </tr>
             </thead>
             <tbody>
@@ -191,10 +192,13 @@
                     <td>{{ $appointment->date }}</td>
                     <td>€{{ number_format($appointment->service->service_price ?? 0, 2) }}</td>
                     <td>
+                        <a href="{{ route('appointments.edit', $appointment->appointment_id) }}" class="btn-pink">Update</a>
+                    </td>
+                    <td>
                         <form action="{{ route('appointments.destroy', $appointment->appointment_id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn-pink">Delete</button>
+                            <button type="submit" class="btn-pink">Cancel</button>
                         </form>
                     </td>
                 </tr>
@@ -229,9 +233,6 @@
                     <td>{{ $appointment->time }}</td>
                     <td>{{ $appointment->date }}</td>
                     <td>€{{ number_format($appointment->service->service_price ?? 0, 2) }}</td>
-                    <td>
-                        <a href="{{ route('appointments.edit', $appointment->appointment_id) }}" class="btn-pink">Edit</a>
-                    </td>
                     <td>
                         <form action="{{ route('appointments.destroy', $appointment->appointment_id) }}" method="POST">
                             @csrf
