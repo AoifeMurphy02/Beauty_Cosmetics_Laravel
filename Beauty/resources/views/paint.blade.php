@@ -5,8 +5,8 @@
 <section id="hero-2" class="bg-fixed hero-section division bg-heroimg2 bg-cover pt-5">
     <p class="h2glamour">Create your own Nail Designs</p>
 </section>
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container" style="position: relative;">
+    <div class="row justify-content-center" style="position: relative;">
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header"><br></div>
@@ -14,19 +14,19 @@
                     <!-- Container for relative positioning -->
                     <div style="position: relative;">
                         <!-- Image of the hand with the nail -->
-                        <img src="{{ asset('css/images/nailhand2.png') }}" id="nailhandimg" alt="Nail Image" style="width: 100%; height: auto;">
+                        <img src="{{ asset('css/images/nailhand2.png') }}" id="nailhandimg" alt="Nail Image" style="width: 100%; height: auto; display: block;">
                         <!-- Canvas overlay for painting -->
                         <canvas id="paintCanvas" width="1000" height="600" style="position: absolute; top: 0; left: 0;"></canvas>
                         <!-- Toolbar -->
                        
-                    </div> <div id="toolbar">
-                            <input type="color" id="colorPicker">
-                            <button id="clearButton">Clear</button>
-                            <button id="drawScribbleButton">Scribble</button>
-                            <button id="drawPenButton">Pen</button>
-                            <button id="saveButton">Save</button>
-
-                        </div>
+                    </div>
+                    <div id="toolbar">
+                        <input type="color" id="colorPicker">
+                        <button id="clearButton">Clear</button>
+                        <button id="drawScribbleButton">Scribble</button>
+                        <button id="drawPenButton">Pen</button>
+                        <button id="saveButton">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -38,6 +38,7 @@
     var canvas = document.getElementById('paintCanvas');
     var context = canvas.getContext('2d');
     var drawingMode = 'scribble'; // Default drawing mode
+    var isDrawing = false; // Flag to track drawing state
 
     // Event listeners to handle drawing modes
     document.getElementById("drawScribbleButton").addEventListener("click", function() {
@@ -49,8 +50,9 @@
 
     // Event listeners to handle painting
     canvas.addEventListener('mousedown', startDrawing);
-    canvas.addEventListener('mouseup', stopDrawing);
     canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('mouseout', stopDrawing);
 
     // Button click event listeners
     document.getElementById("clearButton").addEventListener("click", clearCanvas);
@@ -58,32 +60,39 @@
     function startDrawing(e) {
         // Set drawing mode and color
         setColor();
+        isDrawing = true;
         context.beginPath();
-        if (drawingMode === 'scribble') {
-            context.moveTo(e.clientX, e.clientY);
-        } else if (drawingMode === 'pen') {
-            context.moveTo(e.clientX, e.clientY);
+        var x = e.offsetX;
+        var y = e.offsetY;
+        console.log("Start Drawing: x = " + x + ", y = " + y);
+        context.moveTo(x, y);
+        if (drawingMode === 'pen') {
             context.lineWidth = 2; // Set pen width
             context.lineCap = 'round'; // Set line cap style to round
             context.strokeStyle = color; // Set stroke color
+            context.lineTo(x, y); // Draw a dot at the starting point
+            context.stroke(); // Draw a dot at the starting point
         }
     }
 
     function draw(e) {
+        if (!isDrawing) return;
+        var x = e.offsetX;
+        var y = e.offsetY;
+        console.log("Drawing: x = " + x + ", y = " + y);
         if (drawingMode === 'scribble') {
-            if (e.buttons !== 1) return; // Check if left mouse button is pressed
-            context.lineTo(e.clientX, e.clientY);
+            context.lineTo(x, y);
             context.strokeStyle = color; // Set stroke color
             context.lineWidth = 7; // Set scribble line width
             context.stroke();
         } else if (drawingMode === 'pen') {
-            if (e.buttons !== 1) return; // Check if left mouse button is pressed
-            context.lineTo(e.clientX, e.clientY);
+            context.lineTo(x, y);
             context.stroke();
         }
     }
 
     function stopDrawing() {
+        isDrawing = false;
         context.closePath();
     }
 
@@ -97,28 +106,27 @@
         context.clearRect(0, 0, canvas.width, canvas.height);
     }
 
-
     // Button click event listener to save canvas as image
-document.getElementById("saveButton").addEventListener("click", saveCanvas);
+    document.getElementById("saveButton").addEventListener("click", saveCanvas);
 
-function saveCanvas() {
-    // Get data URI of the canvas
-    var dataURL = canvas.toDataURL();
-    
-    // Create a temporary link element
-    var link = document.createElement('a');
-    link.href = dataURL;
-    
-    // Set filename (you can change it as needed)
-    link.download = 'canvas_image.png';
-    
-    // Append link to the body and trigger a click event to download the image
-    document.body.appendChild(link);
-    link.click();
-    
-    // Remove the link from the body
-    document.body.removeChild(link);
-}
+    function saveCanvas() {
+        // Get data URI of the canvas
+        var dataURL = canvas.toDataURL();
+        
+        // Create a temporary link element
+        var link = document.createElement('a');
+        link.href = dataURL;
+        
+        // Set filename (you can change it as needed)
+        link.download = 'canvas_image.png';
+        
+        // Append link to the body and trigger a click event to download the image
+        document.body.appendChild(link);
+        link.click();
+        
+        // Remove the link from the body
+        document.body.removeChild(link);
+    }
 
 </script>
 @endsection
