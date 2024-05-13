@@ -1,4 +1,8 @@
-{
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+{"/js/app.js": "/js/app.js",
+
+    "/css/footer.css": "/css/footer.css",
+    "/css/aboutus.css": "/css/aboutus.css",
+    "/css/app.css": "/css/app.css",
+ "/css/index.css": "/css/index.css"
+
 }
