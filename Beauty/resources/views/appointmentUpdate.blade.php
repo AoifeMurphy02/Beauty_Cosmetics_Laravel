@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container mx-auto mt-24 custom-form-width"> 
+    <h1 class="text-5xl font-bold text-center mb-8">Update Appointment</h1>
     <form action="{{ route('appointments.update', $appointment->appointment_id) }}" method="POST" enctype="multipart/form-data" class="bg-white shadow-md rounded px-32 pt-6 pb-8 mb-4">
         @csrf
         @method('PUT') 
