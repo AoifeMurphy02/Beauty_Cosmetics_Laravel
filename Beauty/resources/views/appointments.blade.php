@@ -72,7 +72,7 @@
     <form method="POST" action="{{ route('appointments.store') }}" class="bg-white shadow-md rounded px-20 pt-6 pb-8 mb-4"> <!-- Adjusted padding to match table width -->
         @csrf
         <div class="mb-4">
-            <label for="service_id" class="block text-gray-700 text-sm font-bold mb-2">Service</label>
+            <label for="service_id" class="block text-gray-700 text-xl font-bold mb-2">Service</label>
             <div class="overflow-x-auto">
                 <table class="Service_table w-full">
                     <thead>
@@ -100,7 +100,7 @@
         </div>
 
         <div class="mb-4">
-            <label for="staff_id" class="block text-gray-700 text-sm font-bold mb-2">Staff</label>
+            <label for="staff_id" class="block text-gray-700 text-xl font-bold mb-2">Staff</label>
             <div class="overflow-x-auto">
                 <table class="staff_table w-full">
                     <thead>
@@ -168,7 +168,7 @@
 
 <!-- User Appointments -->
 @if ($userAppointments->isNotEmpty())
-<h2 class="title mt-24">My Appointments</h2>
+<h1 class="text-3xl font-semibold text-center mb-8">My Appointments</h1>
 <div class="container mx-auto custom-form-width">
     <div class="overflow-x-auto">
         <table class="appointment_table w-full mt-6">
@@ -207,7 +207,7 @@
 
 <!-- All Appointments for Admin -->
 @if(Auth::check() && Auth::user()->isAdmin())
-<h1 class="title mt-24">All Appointments</h1>
+<h1 class="text-3xl font-semibold text-center mb-8">All Appointments</h1>
 <div class="container mx-auto custom-form-width">
     <div class="overflow-x-auto">
         <table class="appointment_table w-full mt-6">
