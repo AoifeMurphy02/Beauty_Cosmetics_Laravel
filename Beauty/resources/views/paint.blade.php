@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <section id="hero-2" class="bg-fixed hero-section division bg-heroimg2 bg-cover pt-5">
     <p class="h2glamour">Create your own Nail Designs</p>
 </section>
