@@ -30,4 +30,4 @@
       </div>
   </div>
 </footer>
-@yield('content')
+
