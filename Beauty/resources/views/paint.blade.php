@@ -24,7 +24,10 @@
                         <input type="color" id="colorPicker">
                         <button id="clearButton">Clear</button>
                         <button id="drawScribbleButton">Scribble</button>
+                        <input type="range" id="brushThicknessSlider" min="1" max="100" value="10" onchange="setRadius(this.value)">
                         <button id="drawPenButton">Pen</button>
+                        <button class="imageButton" onclick="addImageToCanvas('css/images/flower.png')">Add Flower</button>
+                        <button class="imageButton" onclick="addImageToCanvas('css/images/heart.png')">Add Heart</button>
                         <button id="saveButton">Save</button>
                     </div>
                 </div>
@@ -39,6 +42,7 @@
     var context = canvas.getContext('2d');
     var drawingMode = 'scribble'; // Default drawing mode
     var isDrawing = false; // Flag to track drawing state
+    var radius = 10; // Default brush radius
 
     // Event listeners to handle drawing modes
     document.getElementById("drawScribbleButton").addEventListener("click", function() {
@@ -83,7 +87,7 @@
         if (drawingMode === 'scribble') {
             context.lineTo(x, y);
             context.strokeStyle = color; // Set stroke color
-            context.lineWidth = 7; // Set scribble line width
+            context.lineWidth = radius * 2; // Set scribble line width
             context.stroke();
         } else if (drawingMode === 'pen') {
             context.lineTo(x, y);
@@ -96,6 +100,29 @@
         context.closePath();
     }
 
+    var isAddingImage = false; // Flag to track if user is adding an image
+
+function addImageToCanvas(imageUrl) {
+    isAddingImage = true; // Set flag to true
+    var img = new Image();
+    img.onload = function() {
+        // Wait for user to click on canvas to position the image
+    };
+    img.src = imageUrl;
+
+    // Event listener to handle click on canvas
+    canvas.addEventListener('click', function(event) {
+        if (isAddingImage) {
+            var x = event.offsetX - img.width / 2; // Calculate X coordinate
+            var y = event.offsetY - img.height / 2; // Calculate Y coordinate
+            context.drawImage(img, x, y); // Draw the image
+            isAddingImage = false; // Reset flag
+        }
+    }, {once: true}); // Use {once: true} to remove the event listener after the first click
+}
+
+
+
     function setColor() {
         var newColor = document.getElementById("colorPicker").value;
         color = newColor;
@@ -104,6 +131,11 @@
 
     function clearCanvas() {
         context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    // Function to set the brush radius
+    function setRadius(value) {
+        radius = value;
     }
 
     // Button click event listener to save canvas as image
