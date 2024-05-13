@@ -20,7 +20,8 @@ mix
     require('autoprefixer'),
   ])
 
-  .styles('resources/css/footer.css', 'public/css/footer.css');
+  .styles('resources/css/footer.css', 'public/css/footer.css')
+  .styles('resources/css/aboutus.css', 'public/css/aboutus.css');
 
 if (mix.inProduction()) {
   mix

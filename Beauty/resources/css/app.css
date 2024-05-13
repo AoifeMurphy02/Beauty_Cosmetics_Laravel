@@ -105,16 +105,6 @@ body {
 .nav-user {
   padding: 5px 10px;
 }
-footer 
-    {
-  background-color: black;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
 
 .staff_table, .Service_table, .appointment_table {
   margin: 20px auto; 
@@ -216,42 +206,99 @@ footer
     padding: 0;
     z-index: -1; /* Makes it a background layer if other content must be over it */
 }
-.footer-columns {
-  display: flex;
-  justify-content: space-around;
-}
 
-.footer-column {
-  flex: 1;
-  padding: 0 20px;
-}
+@media (max-width: 768px) {
+  /* font family */
+  @font-face {
+    font-family: 'Beth Ellen';
+    src: url(/fonts/BethEllen-Regular.ttf?ffa906155b8b3ef85c3d01be72d4b612) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
 
-.footer-column h3 {
-  color: #ffffff;
-  text-decoration: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1.2rem;
-}
+  .beth-ellen-regular {
+    font-family: 'Beth Ellen', cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
 
+  @font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/ProximaNova-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
 
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  color: #ffffff;
-}
+  body {
+    font-family: 'Proxima Nova', sans-serif;
+  }
 
-.footer-column ul li a {
-  text-decoration: none;
-  color: #ffffff;
-}
+  .header {
+    padding: 10px 0; /* Adjust padding as needed */
+  }
 
-footer {
-  background-color: black;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  .container {
+    flex-direction: column;
+    align-items: stretch; /* Stretch items vertically */
+    justify-content: center; /* Center items horizontally */
+    padding: 0; /* Reset padding */
+  }
+
+  .navigation {
+    justify-content: center; /* Center navigation items */
+    gap: 20px; /* Adjust gap between items as needed */
+  }
+
+  .nav-link {
+    padding: 5px 0; /* Adjust padding as needed */
+    font-size: 12px; /* Adjust font size as needed */
+  }
+
+  .nav-logo {
+    margin: 0;
+    padding: 0;
+    font-size: 20px; /* Adjust font size as needed */
+  }
+
+  .nav-logo .logo-subtext {
+    font-size: 10px; /* Adjust font size as needed */
+    margin-top: -3px; /* Adjust margin as needed */
+  }
+
+  .nav-button {
+    padding: 8px 20px; /* Adjust padding as needed */
+    font-size: 12px; /* Adjust font size as needed */
+  }
+
+  .nav-user {
+    padding: 3px 8px; /* Adjust padding as needed */
+  }
+
+  .staff_table,
+  .Service_table,
+  .appointment_table {
+    width: 100%; /* Make tables full width */
+  }
+
+  .form-control {
+    width: 100%; /* Make form controls full width */
+    margin-bottom: 10px; /* Adjust margin as needed */
+  }
+
+  .btn {
+    padding: 8px 16px; /* Adjust padding as needed */
+    font-size: 14px; /* Adjust font size as needed */
+  }
+
+  .title {
+    font-size: 24px; /* Adjust font size as needed */
+  }
+
+  .calendar {
+    width: 100%; /* Make calendar full width */
+  }
+
+  .background-image {
+    height: 50vh; /* Adjust height as needed */
+  }
 }

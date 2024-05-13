@@ -8,6 +8,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ mix('css/footer.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/aboutus.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -40,9 +41,8 @@
             </div>
         </header>
         @yield('content')
-    </div>
-    @include('layouts.footer')
-   
+ 
+     </div>
     
 
 </body>

@@ -1,15 +1,19 @@
-
-
-   footer {
+footer {
+    position: relative; /* Change position to relative */
+    bottom: 0;
+    width: 100%;
     background-color: #fff; /* white background */
     color: #000; /* black text color */
     padding: 40px; /* Increased padding */
-    margin: auto;
+    z-index: 1000; /* Ensure footer is above other content */
 }
+
+
 
 .footer-container {
     display: flex;
     justify-content: space-between;
+    padding-left: 10%;
 }
 
 .footer-section {
@@ -57,3 +61,17 @@
 .footer-section form button[type="submit"]:hover {
     background-color: #ff4081;
 }
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+    }
+  
+    .footer-section {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
