@@ -87,5 +87,7 @@ npm install laravel-mix --save-dev
 npm install cross-env --save-dev
 npm run watch
 ```
+## Video of project
+https://youtu.be/y6au0tl1f7k
 ## Contributing
 Do not hesitate to contribute to the project by adapting or adding features Bug reports or pull requests are welcome.
