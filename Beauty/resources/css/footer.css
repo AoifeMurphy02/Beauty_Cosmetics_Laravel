@@ -1,0 +1,77 @@
+footer {
+    position: relative; /* Change position to relative */
+    bottom: 0;
+    width: 100%;
+    background-color: #fff; /* white background */
+    color: #000; /* black text color */
+    padding: 40px; /* Increased padding */
+    z-index: 1000; /* Ensure footer is above other content */
+}
+
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10%;
+}
+
+.footer-section {
+    width: 30%;
+}
+
+.footer-section h3 {
+    font-size: 24px; /* Increased font size */
+    margin-bottom: 15px; /* Increased margin */
+    color: #ff4081;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+    font-size: 16px; /* Increased font size */
+}
+
+.footer-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section form input[type="email"] {
+    margin-bottom: 15px; /* Increased margin */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* Increased font size */
+}
+
+.footer-section form button[type="submit"] {
+    background-color: #ff4081;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px; /* Increased font size */
+}
+
+.footer-section form button[type="submit"]:hover {
+    background-color: #ff4081;
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+    }
+  
+    .footer-section {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  

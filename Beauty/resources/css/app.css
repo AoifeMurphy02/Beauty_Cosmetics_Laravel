@@ -138,11 +138,14 @@ header.solid {
 .nav-user {
   padding: 5px 10px;
 }
+<<<<<<< HEAD
 
 .img-container {
   overflow: hidden;
   height: 100%;
 }
+=======
+>>>>>>> 517fffc184981f86e887179c4ea39294f9ce3c4d
 
 .img-container img {
   width: 100%;
@@ -313,6 +316,7 @@ footer {
 
 .title {
   text-align: center;
+<<<<<<< HEAD
   font-weight: bold;
 }
 
@@ -340,4 +344,129 @@ footer {
   margin: 0;
   padding: 0;
   z-index: -1; /* Makes it a background layer if other content must be over it */
+=======
+  font-weight:bold;
+}
+    .calendar {
+      width: 60%; 
+      margin: 0 auto; 
+      text-align: center;
+      background-color: #fff; 
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+      padding: 20px;
+      border-radius: 8px;
+  }
+
+  .background-image {
+    background-image: url('https://www.thelist.com/img/gallery/the-biggest-mistakes-everyone-makes-with-gel-nails/l-intro-1670359663.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    height: 100vh; /* Ensuring it covers the full viewport height */
+    width: 100vw;   /* Cover the full viewport width */
+    position: absolute; /* Optional based on your layout needs */
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    z-index: -1; /* Makes it a background layer if other content must be over it */
+}
+
+@media (max-width: 768px) {
+  /* font family */
+  @font-face {
+    font-family: 'Beth Ellen';
+    src: url(/fonts/BethEllen-Regular.ttf?ffa906155b8b3ef85c3d01be72d4b612) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .beth-ellen-regular {
+    font-family: 'Beth Ellen', cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Proxima Nova';
+    src: url('/fonts/ProximaNova-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'Proxima Nova', sans-serif;
+  }
+
+  .header {
+    padding: 10px 0; /* Adjust padding as needed */
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: stretch; /* Stretch items vertically */
+    justify-content: center; /* Center items horizontally */
+    padding: 0; /* Reset padding */
+  }
+
+  .navigation {
+    justify-content: center; /* Center navigation items */
+    gap: 20px; /* Adjust gap between items as needed */
+  }
+
+  .nav-link {
+    padding: 5px 0; /* Adjust padding as needed */
+    font-size: 12px; /* Adjust font size as needed */
+  }
+
+  .nav-logo {
+    margin: 0;
+    padding: 0;
+    font-size: 20px; /* Adjust font size as needed */
+  }
+
+  .nav-logo .logo-subtext {
+    font-size: 10px; /* Adjust font size as needed */
+    margin-top: -3px; /* Adjust margin as needed */
+  }
+
+  .nav-button {
+    padding: 8px 20px; /* Adjust padding as needed */
+    font-size: 12px; /* Adjust font size as needed */
+  }
+
+  .nav-user {
+    padding: 3px 8px; /* Adjust padding as needed */
+  }
+
+  .staff_table,
+  .Service_table,
+  .appointment_table {
+    width: 100%; /* Make tables full width */
+  }
+
+  .form-control {
+    width: 100%; /* Make form controls full width */
+    margin-bottom: 10px; /* Adjust margin as needed */
+  }
+
+  .btn {
+    padding: 8px 16px; /* Adjust padding as needed */
+    font-size: 14px; /* Adjust font size as needed */
+  }
+
+  .title {
+    font-size: 24px; /* Adjust font size as needed */
+  }
+
+  .calendar {
+    width: 100%; /* Make calendar full width */
+  }
+
+  .background-image {
+    height: 50vh; /* Adjust height as needed */
+  }
+>>>>>>> 517fffc184981f86e887179c4ea39294f9ce3c4d
 }

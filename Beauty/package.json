@@ -23,6 +23,7 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
-        "bootstrap": "^5.3.3"
+        "bootstrap": "^5.3.3",
+        "wowjs": "^1.1.3"
     }
 }
