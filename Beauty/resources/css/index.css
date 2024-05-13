@@ -28,3 +28,25 @@
  
 }
 
+
+.buttonbg2
+{
+    font-family: 'Proxima Nova', sans-serif;
+    background-color: #ff4081;
+  color: white;
+  border-radius: 15px; 
+  font-weight: bold;
+  padding: 10px 25px; 
+  text-transform: uppercase;
+  transition: background-color 0.3s; 
+}
+
+
+.buttonbg2:hover {
+    background-color: transparent;
+    border-color: #ff4081;
+    border: 1px solid #ff4081;
+    color: black;
+ 
+}
+
