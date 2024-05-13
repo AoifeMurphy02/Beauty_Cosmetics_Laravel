@@ -1,23 +1,15 @@
 @import "tailwindcss/base";
-
 @import "tailwindcss/components";
-
 @import "tailwindcss/utilities";
 
-
-@font-face 
-{
+@font-face {
   font-family: 'Beth Ellen';
-
   src: url(/fonts/BethEllen-Regular.ttf?ffa906155b8b3ef85c3d01be72d4b612) format('truetype');
-
   font-weight: 400;
-
   font-style: normal;
 }
 
-.beth-ellen-regular
-   {
+.beth-ellen-regular {
   font-family: 'Beth Ellen', cursive;
   font-weight: 400;
   font-style: normal;
@@ -31,37 +23,77 @@
 }
 
 body {
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'Lora', serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
 
-.header {
+#app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+header.transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+header.solid {
   background-color: white;
-  padding: 20px 0; 
-  border-bottom: 1px solid #eee; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Navigation and Logo Styling */
 .container {
   display: flex;
-    max-width: 1200px;
-    margin: auto auto;
-    padding: 0 20px;
-    align-items: center;
-    justify-content: flex-end;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .navigation {
   display: flex;
   align-items: center;
-  gap: 30px; 
+  gap: 30px;
+  transition: color 0.3s;
+}
+
+.text-white .nav-link,
+.text-white .nav-logo,
+.text-white .nav-logo .logo-subtext,
+.text-white .nav-user {
+  color: white;
+}
+
+.text-black .nav-link,
+.text-black .nav-logo,
+.text-black .nav-logo .logo-subtext,
+.text-black .nav-user {
+  color: black;
 }
 
 .nav-link {
   color: #333;
   text-decoration: none;
-  padding: 10px 0; 
+  padding: 10px 0;
   font-size: 14px;
   font-family: 'Proxima Nova', sans-serif;
-  font-weight: 600; 
+  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -73,7 +105,7 @@ body {
   text-decoration: none;
   color: black;
   font-size: 24px;
-  font-weight: 700; 
+  font-weight: 700;
   text-align: center;
   margin: 0 50px;
   display: flex;
@@ -83,19 +115,20 @@ body {
 
 .nav-logo .logo-subtext {
   font-size: 12px;
-  color: #333; 
-  margin-top: -5px; 
+  color: #333;
+  margin-top: -5px;
   font-family: 'Proxima Nova', sans-serif;
 }
 
+/* Button and User Styling */
 .nav-button {
   background-color: #ff4081;
   color: white;
-  border-radius: 25px; 
+  border-radius: 25px;
   font-weight: bold;
-  padding: 10px 25px; 
+  padding: 10px 25px;
   text-transform: uppercase;
-  transition: background-color 0.3s; 
+  transition: background-color 0.3s;
 }
 
 .nav-button:hover {
@@ -105,7 +138,121 @@ body {
 .nav-user {
   padding: 5px 10px;
 }
+<<<<<<< HEAD
 
+.img-container {
+  overflow: hidden;
+  height: 100%;
+}
+=======
+>>>>>>> 517fffc184981f86e887179c4ea39294f9ce3c4d
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animation for Fade-In Effect with Slower Duration and Staggered Timing */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+  opacity: 0; /* Ensures elements are hidden before animating */
+}
+
+/* Custom form width */
+.custom-form-width {
+  max-width: 70%; /* Adjust this percentage to your desired width */
+  width: 100%;
+  margin-top: 1rem; /* Add some space above the form */
+}
+
+.btn-pink {
+  background-color: #ff4081;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-pink:hover {
+  background-color: #ff80ab;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #fff; /* white background */
+  color: #000; /* black text color */
+  padding: 40px; /* Increased padding */
+  width: 100%;
+  text-align: center;
+  margin-top: auto; /* Pushes footer to bottom */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-section {
+  width: 30%;
+}
+
+.footer-section h3 {
+  font-size: 24px; /* Increased font size */
+  margin-bottom: 15px; /* Increased margin */
+  color: #ff4081;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+  font-size: 16px; /* Increased font size */
+}
+
+.footer-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section form input[type="email"] {
+  margin-bottom: 15px; /* Increased margin */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px; /* Increased font size */
+}
+
+.footer-section form button[type="submit"] {
+  background-color: #ff4081;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px; /* Increased font size */
+}
+
+.footer-section form button[type="submit"]:hover {
+  background-color: #ff80ab;
+}
+
+/* Additional Styles for Tables and Forms */
 .staff_table, .Service_table, .appointment_table {
   margin: 20px auto; 
   width: 50%;
@@ -113,7 +260,6 @@ body {
 }
 
 .staff_table th, .staff_table td, .Service_table th, .Service_table td, .appointment_table th, .appointment_table td  {
-  
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
@@ -123,20 +269,11 @@ body {
   background-color: #f2f2f2;
 }
 
-.staff_table tr:nth-child(even) {
+.staff_table tr:nth-child(even), .Service_table tr:nth-child(even) {
   background-color: #f2f2f2;
-}
-.Service_table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-.staff_table tr:hover {
-  background-color: #ddd;
 }
 
-.Service_table tr:hover {
-  background-color: #ddd;
-}
-.appointment_table tr:hover {
+.staff_table tr:hover, .Service_table tr:hover, .appointment_table tr:hover {
   background-color: #ddd;
 }
 
@@ -176,8 +313,38 @@ body {
 .btn:hover {
   background-color: pink;
 }
-.title{
+
+.title {
   text-align: center;
+<<<<<<< HEAD
+  font-weight: bold;
+}
+
+.calendar {
+  width: 60%; 
+  margin: 0 auto; 
+  text-align: center;
+  background-color: #fff; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.background-image {
+  background-image: url('https://www.thelist.com/img/gallery/the-biggest-mistakes-everyone-makes-with-gel-nails/l-intro-1670359663.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh; /* Ensuring it covers the full viewport height */
+  width: 100vw;   /* Cover the full viewport width */
+  position: absolute; /* Optional based on your layout needs */
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: -1; /* Makes it a background layer if other content must be over it */
+=======
   font-weight:bold;
 }
     .calendar {
@@ -301,4 +468,5 @@ body {
   .background-image {
     height: 50vh; /* Adjust height as needed */
   }
+>>>>>>> 517fffc184981f86e887179c4ea39294f9ce3c4d
 }
