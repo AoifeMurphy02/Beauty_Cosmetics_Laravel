@@ -13,13 +13,14 @@
 </head>
 <body class="{{ in_array(Route::currentRouteName(), ['staff', 'gallery', 'appointments', 'services.index']) ? 'transparent-header' : '' }}">
     <div id="app">
-        <header id="main-header" class="header {{ in_array(Route::currentRouteName(), ['staff', 'gallery', 'appointments', 'services.index']) ? 'transparent' : 'solid' }}">
+        <header id="main-header" class="header {{ in_array(Route::currentRouteName(), ['staff', 'gallery', 'paint', 'appointments', 'services.index']) ? 'transparent' : 'solid' }}">
             <div class="container">
-                <nav id="main-navigation" class="navigation {{ in_array(Route::currentRouteName(), ['staff', 'gallery', 'appointments', 'services.index']) ? 'text-white' : '' }}">
+                <nav id="main-navigation" class="navigation {{ in_array(Route::currentRouteName(), ['staff', 'gallery', 'paint', 'appointments', 'services.index']) ? 'text-white' : '' }}">
                     <a href="/" class="nav-link">Home</a>
                     <a href="/aboutUs" class="nav-link">About</a>
                     <a href="/services" class="nav-link">Services</a>
                     <a href="/appointments" class="nav-link">Appointments</a>
+                    <a href="/paint" class="nav-link">Create</a>
                     <a href="{{ url('/') }}" class="nav-logo">
                         GLAMOUR TOUCH
                         <span class="logo-subtext">Nails & Beauty</span>

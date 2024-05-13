@@ -11,9 +11,11 @@ use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\AppointmentController;
 
 Route::get('/', [PagesController::class, 'index'])->name('index');
-Route::get('/appointments', [PagesController::class, 'appointments']);
+// Route::get('/appointments', [PagesController::class, 'appointments']);
 Route::get('/aboutUs', [PagesController::class, 'aboutUs']);
 Route::get('/gallery', [PagesController::class, 'gallery']);
+// Route::get('/paint', [PagesController::class, 'paint']);
+
 
 // Services routes
 Route::get('/services', [ServicesController::class, 'index'])->name('services.index');
@@ -39,11 +41,11 @@ Route::put('/staff/{artist_name}', [StaffController::class, 'update'])->name('st
 Route::get('/appointments', [AppointmentController::class, 'index'])->name('appointments.index');
 Route::get('/appointments/create', [AppointmentController::class, 'create'])->name('appointments.create');
 Route::post('/appointments/store', [AppointmentController::class, 'store'])->name('appointments.store');
-Route::delete('appointments/{appointment}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
+Route::delete('/appointments/{appointment}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
 Route::get('/appointments/{appointment}/edit', [AppointmentController::class, 'edit'])->name('appointments.edit');
 Route::put('/appointments/{appointment}/update', [AppointmentController::class, 'update'])->name('appointments.update');
-Route::get('/api/available-times/{staff_id}/{date}', [AppointmentController::class, 'availableTimes']);
 Route::get('/appointments/available-times', [AppointmentController::class, 'fetchAvailableTimes']);
+Route::get('/api/available-times/{staff_id}/{date}', [AppointmentController::class, 'availableTimes']);
 
 
 Auth::routes();
@@ -53,5 +55,7 @@ Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->nam
 Route::get('/test', function () {
     return 'Test route works!';
 });
+
+Route::get('/paint', function () { return view('paint'); })->name('paint');
 
 
