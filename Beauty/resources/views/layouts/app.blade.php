@@ -10,12 +10,13 @@
     <link href="{{ mix('css/footer.css') }}" rel="stylesheet">
     <link href="{{ mix('css/aboutus.css') }}" rel="stylesheet">
     <link href="{{ mix('css/index.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 </head>
-<body class="{{ in_array(Route::currentRouteName(), ['staff', 'gallery', 'appointments', 'services.index']) ? 'transparent-header' : '' }}">
+<body class="{{ in_array(Route::currentRouteName(), ['index','aboutUs','staff', 'gallery', 'appointments.index', 'services.index']) ? 'transparent-header' : '' }}">
     <div id="app">
-        <header id="main-header" class="header {{ in_array(Route::currentRouteName(), ['staff', 'gallery', 'paint', 'appointments', 'services.index']) ? 'transparent' : 'solid' }}">
+        <header id="main-header" class="header {{ in_array(Route::currentRouteName(), ['index', 'aboutUs', 'staff', 'gallery', 'appointments.index', 'services.index']) ? 'transparent' : 'solid' }}">
             <div class="container">
-                <nav id="main-navigation" class="navigation {{ in_array(Route::currentRouteName(), ['staff', 'gallery', 'paint', 'appointments', 'services.index']) ? 'text-white' : '' }}">
+                <nav id="main-navigation" class="navigation {{ in_array(Route::currentRouteName(), ['index', 'aboutUs', 'staff', 'gallery', 'appointments.index', 'services.index']) ? 'text-white' : '' }}">
                     <a href="/" class="nav-link">Home</a>
                     <a href="/aboutUs" class="nav-link">About</a>
                     <a href="/services" class="nav-link">Services</a>
@@ -67,5 +68,12 @@
                 console.log('Transparent header class not applied.');
             }
     </script>
+    <script>
+        var botmanWidget = {
+            aboutText: 'Start the conversation with Hi',
+            introMessage: 'WELCOME TO GLAMOUR TOUCH'
+        };
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 </body>
 </html>

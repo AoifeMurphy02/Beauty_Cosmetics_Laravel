@@ -24,6 +24,8 @@ Route::get('/services/create', [ServicesController::class, 'create'])->name('ser
 Route::post('/services/store', [ServicesController::class, 'store'])->name('services.store');
 Route::get('/services/{service_name}/edit', [ServicesController::class, 'edit'])->name('services.edit');
 Route::put('/services/{service_name}', [ServicesController::class, 'update'])->name('services.update');
+Route::delete('/services/{service_name}', [ServicesController::class, 'destroy'])->name('services.destroy');
+
 
 Route::get('/appointments/create', 'AppointmentController@create')->name('appointments.create');
 Route::post('/appointments/store', 'AppointmentController@store')->name('appointments.store');
@@ -34,9 +36,11 @@ Route::get('/staff', [StaffController::class, 'index']);
 Route::get('/staff', [StaffController::class, 'index'])->name('staff');
 Route::get('/staff/create', [StaffController::class, 'create'])->name('staff.create');
 Route::post('/staff', [StaffController::class, 'store'])->name('staff.store');
+Route::delete('/staff/{artist_name}', [StaffController::class, 'destroy'])->name('staff.destroy');
 
 Route::get('/staff/{artist_name}/edit', [StaffController::class, 'edit'])->name('staff.edit');
 Route::put('/staff/{artist_name}', [StaffController::class, 'update'])->name('staff.update');
+
 
 Route::get('/appointments', [AppointmentController::class, 'index'])->name('appointments.index');
 Route::get('/appointments/create', [AppointmentController::class, 'create'])->name('appointments.create');
@@ -47,6 +51,7 @@ Route::put('/appointments/{appointment}/update', [AppointmentController::class, 
 Route::get('/appointments/available-times', [AppointmentController::class, 'fetchAvailableTimes']);
 Route::get('/api/available-times/{staff_id}/{date}', [AppointmentController::class, 'availableTimes']);
 
+Route::match(['get', 'post'], '/botman', 'App\Http\Controllers\BotManController@handle');
 
 Auth::routes();
 

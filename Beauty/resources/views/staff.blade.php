@@ -83,10 +83,16 @@
                     <p class="text-gray-700 text-base">{{ $staff->email }}</p>
                 </div>
                 @if(Auth::check() && Auth::user()->isAdmin())
-                    <div class="px-6 pt-4 pb-2 mb-12">
-                        <a href="{{ route('staff.edit', $staff->artist_name) }}" class="btn-pink">Edit</a>
-                    </div>
-                @endif
+                <div class="px-6 pt-4 pb-2 mb-12 flex space-x-2">
+                    <a href="{{ route('staff.edit', $staff->artist_name) }}" class="btn-pink">Edit</a>
+                    <form action="{{ route('staff.destroy', $staff->artist_name) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this staff member?');" class="inline-block">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn-pink">Delete</button>
+                    </form>
+                </div>
+            @endif
+            
             </div>
         @endforeach
     </div>

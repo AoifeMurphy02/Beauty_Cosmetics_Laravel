@@ -11,7 +11,7 @@ class ServicesController extends Controller
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index']]);
-        $this->middleware('checkrole:admin')->only(['create', 'store', 'edit', 'update']);
+        $this->middleware('checkrole:admin')->only(['create', 'store', 'edit', 'update','destroy']);
     }
 
     public function index()
@@ -79,4 +79,12 @@ class ServicesController extends Controller
         return redirect()->route('services.index')
                          ->with('message', 'Service has been updated!');
     }
+
+    public function destroy($service_name)
+{
+    $service = Services::where('service_name', $service_name)->firstOrFail();
+    $service->delete();
+    return redirect()->route('services.index')->with('success', 'Service deleted successfully!');
+}
+
 }

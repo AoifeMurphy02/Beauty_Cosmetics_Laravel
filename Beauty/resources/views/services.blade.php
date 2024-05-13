@@ -83,8 +83,13 @@
                     <p class="text-gray-700 text-base">${{ number_format($service->service_price, 2) }}</p>
                 </div>
                 @if(Auth::check() && Auth::user()->isAdmin())
-                    <div class="px-6 pt-4 pb-2 mb-12">
+                    <div class="px-6 pt-4 pb-2 mb-12 flex space-x-2">
                         <a href="{{ route('services.edit', $service->service_name) }}" class="btn-pink">Edit</a>
+                        <form action="{{ route('services.destroy', $service->service_name) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this service?');" class="inline-block">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn-pink">Delete</button>
+                        </form>
                     </div>
                 @endif
             </div>
