@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section id="hero-2" class="bg-fixed hero-section division bg-hero-image2 bg-cover">
+<section id="hero-2" class="bg-fixed hero-section division bg-hero-image2 bg-cover pt-5">
     <p class="h2glamour">About Glamour Nails</p>
 </section>
 
@@ -113,9 +113,4 @@
     </div>
 </section>
 
-
-
-
-
-@include('layouts.footer')
 @endsection
