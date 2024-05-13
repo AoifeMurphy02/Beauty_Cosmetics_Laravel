@@ -50,9 +50,10 @@ class BotManController extends Controller
     {
         $botman->ask('Hello! What is your Name?', function(Answer $answer) {
             $name = $answer->getText();
-            $botman->say('Nice to meet you ' . $name . '! How can I assist you today?');
+            $this->say('Nice to meet you '.$name);
         });
     }
+
 
     public function provideManicureDetails($botman)
     {
