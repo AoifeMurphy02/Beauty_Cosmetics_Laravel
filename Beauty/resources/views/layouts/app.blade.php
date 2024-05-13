@@ -9,6 +9,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ mix('css/footer.css') }}" rel="stylesheet">
     <link href="{{ mix('css/aboutus.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/index.css') }}" rel="stylesheet">
 </head>
 <body class="{{ in_array(Route::currentRouteName(), ['staff', 'gallery', 'appointments', 'services.index']) ? 'transparent-header' : '' }}">
     <div id="app">

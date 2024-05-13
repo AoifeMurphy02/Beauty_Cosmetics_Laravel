@@ -76,4 +76,6 @@
     <button type="submit" class="btn btn-primary">Update Appointment</button>
 </form>
 
+@include('layouts.footer')
 @endsection
+

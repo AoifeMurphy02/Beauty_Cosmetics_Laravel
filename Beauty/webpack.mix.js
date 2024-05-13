@@ -21,7 +21,8 @@ mix
   ])
 
   .styles('resources/css/footer.css', 'public/css/footer.css')
-  .styles('resources/css/aboutus.css', 'public/css/aboutus.css');
+  .styles('resources/css/aboutus.css', 'public/css/aboutus.css')
+  .styles('resources/css/index.css', 'public/css/index.css');
 
 if (mix.inProduction()) {
   mix
