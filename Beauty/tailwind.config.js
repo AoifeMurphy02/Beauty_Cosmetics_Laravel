@@ -18,8 +18,7 @@ module.exports = {
        'home-page1': "url('https://tint.creativemarket.com/Ui4y9vqSx8a7h8xlwDBGDE5xEmG0hTSkoXc6NClS1fk/width:1820/height:1212/gravity:ce/rt:fill-down/el:1/czM6Ly9maWxlcy5jcmVhdGl2ZW1hcmtldC5jb20vaW1hZ2VzL3NjcmVlbnNob3RzL3Byb2R1Y3RzLzY4Ni82ODY2LzY4NjYwNDAvXzM5YTIyODYtY29weS1vLmpwZw?1566541869&fmt=webp')",
        'nailbglog': "url('https://www.melarossa.it/wp-content/uploads/2017/07/pedicure-.jpg')",
        'nailbglog2': "url('https://usercontent.one/wp/mariannetaylor.co.uk/wp-content/uploads/2021/12/Product-still-life-photography-content-creation-for-Barry-M-Cosmetics.-Beauty-product-photography-styling-by-Marianne-Taylor._0003.jpg?media=1637181377')",
-       'heroimg2':"url('https://www.brit.co/media-library/summer-nail-art-ideas.jpg?id=33655397&width=1200&height=600&coordinates=0%2C315%2C0%2C215')",
-      
+       'heroimg2': "url('https://www.brit.co/media-library/summer-nail-art-ideas.jpg?id=33655397&width=1200&height=600&coordinates=0%2C315%2C0%2C215')",
       }),
     },
   },

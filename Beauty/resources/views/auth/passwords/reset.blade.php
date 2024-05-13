@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
+<div class="bg-lightPink pt-20 pb-20 bg-cover backdrop-blur-lg">
+    <main class="sm:container sm:mx-auto sm:max-w-2xl sm:mt-10 p-15">
     <div class="flex">
-        <div class="w-full">
+        <div class="w-full rounded-lg border-5 border-white">
             <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
 
-                <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
+                <header class="font-semibold bg-customPink text-white py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                     {{ __('Reset Password') }}
                 </header>
 
@@ -16,8 +17,8 @@
                     <input type="hidden" name="token" value="{{ $token }}">
 
                     <div class="flex flex-wrap">
-                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
-                            {{ __('E-Mail Address') }}:
+                        <label for="email" class="block text-black text-sm font-bold mb-2 sm:mb-4">
+                            {{ __('Email Address') }}:
                         </label>
 
                         <input id="email" type="email"
