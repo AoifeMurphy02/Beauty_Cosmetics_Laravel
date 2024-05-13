@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container mx-auto px-5 lg:px-32 lg:pt-24">
+<div class="container mx-auto px-5 lg:px-32 lg:pt-24" style="margin-top: 40px">
     <div class="flex flex-wrap -mx-1 md:-mx-2">
         <div class="flex w-1/2 flex-wrap">
             <div class="w-1/2 p-1 md:p-2">
