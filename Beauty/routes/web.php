@@ -49,6 +49,7 @@ Route::put('/appointments/{appointment}/update', [AppointmentController::class, 
 Route::get('/api/available-times/{staff_id}/{date}', [AppointmentController::class, 'availableTimes']);
 Route::get('/appointments/available-times', [AppointmentController::class, 'fetchAvailableTimes']);
 
+Route::match(['get', 'post'], '/botman', 'App\Http\Controllers\BotManController@handle');
 
 Auth::routes();
 

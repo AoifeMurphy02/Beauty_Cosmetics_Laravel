@@ -10,6 +10,7 @@
     <link href="{{ mix('css/footer.css') }}" rel="stylesheet">
     <link href="{{ mix('css/aboutus.css') }}" rel="stylesheet">
     <link href="{{ mix('css/index.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 </head>
 <body class="{{ in_array(Route::currentRouteName(), ['index','aboutUs','staff', 'gallery', 'appointments.index', 'services.index']) ? 'transparent-header' : '' }}">
     <div id="app">
@@ -66,5 +67,12 @@
                 console.log('Transparent header class not applied.');
             }
     </script>
+    <script>
+        var botmanWidget = {
+            aboutText: 'Start the conversation with Hi',
+            introMessage: 'WELCOME TO GLAMOUR TOUCH'
+        };
+    </script>
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
 </body>
 </html>
